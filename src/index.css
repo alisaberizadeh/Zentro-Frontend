@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+body{
+    background-color: rgb(243, 243, 243);
+}
+@keyframes slide {
+  0% {
+    left: -30%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;               
+  height: 12px;              
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+  background: #ffffff;       
+  border-radius: 3rem;     
+}
+
+/* ۳. تنظیم بخش متحرک اسکرول‌بار (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #d3d3d3;         
+  border-radius: 3rem;      
+  
+}
+
+/* ۴. تغییر رنگ هنگام هاور (Hover) */
+::-webkit-scrollbar-thumb:hover {
+  background: #b9b9b9;         
+  cursor: pointer;
+}
+a,button{
+  transition: all ease .3s;
+}
