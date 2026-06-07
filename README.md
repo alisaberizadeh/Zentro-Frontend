@@ -1,6 +1,6 @@
 # 🚀 Zentro
 
-React · JavaScript · Tailwind CSS · Laravel · MySQL · Axios · Context API · Swiper · Toastify · SweetAlert2
+React · JavaScript · Tailwind CSS · Laravel · MySQL · Axios · Context API · React Query · Swiper · Toastify · SweetAlert2
 
 🌐 Live Demo  
 [Demo Link](https://zentroapp.ir/)
@@ -36,10 +36,10 @@ The project focuses on performance, scalability, and smooth user experience.
 ## 🛠 Technologies
 
 ### Frontend
-React, JavaScript, Tailwind CSS, Swiper, Axios, Toastify, SweetAlert2, Context API + LocalStorage
+React · JavaScript · Tailwind CSS · Laravel · MySQL · Axios · Context API · React Query · Swiper · Toastify · SweetAlert2
 
 ### Backend
-Laravel (PHP), MySQL
+Laravel (PHP) · MySQL
 
 ---
 
