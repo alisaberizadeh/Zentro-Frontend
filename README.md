@@ -1,16 +1,56 @@
-# React + Vite
+# 🚀 Zentro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React · JavaScript · Tailwind CSS · Laravel · MySQL · Axios · Context API · Swiper · Toastify · SweetAlert2
 
-Currently, two official plugins are available:
+🌐 Live Demo  
+:contentReference[oaicite:0]{index=0}
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🧠 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Zentro** is a full-featured social media platform inspired by Instagram.
 
-## Expanding the ESLint configuration
+It allows users to create posts, interact with others, chat in real-time, and explore personalized content.  
+The project focuses on performance, scalability, and smooth user experience.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 🔐 User Authentication System  
+- 👤 User Profile Management  
+- 📸 Stories System  
+- 👥 Follow / Unfollow System  
+- ❤️ Like & 💬 Comment on Posts  
+- 💬 Real-time Chat System  
+- 🔥 Explore Page  
+- 📊 Personalized Feed  
+- 🔔 Notifications System  
+- 🔍 User Search System  
+- ⭐ Saved / Favorite Posts  
+- ⚡ And more...
+
+---
+
+## 🛠 Technologies
+
+### Frontend
+React, JavaScript, Tailwind CSS, Swiper, Axios, Toastify, SweetAlert2, Context API + LocalStorage
+
+### Backend
+Laravel (PHP), MySQL
+
+---
+
+## ⚙️ Installation & Setup
+
+### 📦 Clone & Run Project
+
+```bash
+git clone https://github.com/your-username/zentro.git
+cd zentro
+
+cd frontend
+npm install
+npm run dev
