@@ -2,7 +2,7 @@
 
 React · JavaScript · Tailwind CSS · Laravel · MySQL · Axios · Context API · React Query · Swiper · Toastify · SweetAlert2
 
-[Demo Link](https://zentroapp.ir/)
+[zentroapp.ir](https://zentroapp.ir/)
 
 ---
 
