@@ -19,7 +19,7 @@ function Home() {
     const { data: dadaSAlltories, isLoading: isLoadingStories } = useQuery({
         queryKey: ['Allstories', user?.id],
         queryFn: async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/api/stories/`, {
+            const res = await axios.get(`https://api.zentroapp.ir/api/stories`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
@@ -33,7 +33,7 @@ function Home() {
     const { data: dataHome, isLoading: isLoadingHome } = useQuery({
         queryKey: ['home', user?.id],
         queryFn: async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/api/feed/`, {
+            const res = await axios.get(`https://api.zentroapp.ir/api/feed`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }

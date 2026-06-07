@@ -23,7 +23,7 @@ function CreateStory() {
             const formData = new FormData();
             formData.append("image", data.image[0]);
             return axios.post(
-                "http://127.0.0.1:8000/api/stories",
+                "https://api.zentroapp.ir/api/stories",
                 formData,
                 {
                     headers: {

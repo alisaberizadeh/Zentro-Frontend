@@ -15,7 +15,7 @@ function Users() {
         queryKey: ['users', page],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/users?page=${page}`,
+                `https://api.zentroapp.ir/api/users?page=${page}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

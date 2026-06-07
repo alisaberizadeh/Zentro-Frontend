@@ -23,7 +23,7 @@ function CreatePost() {
             formData.append("media", data.media[0]);
             formData.append("caption", data.caption || "");
             return axios.post(
-                "http://127.0.0.1:8000/api/posts",
+                "https://api.zentroapp.ir/api/posts",
                 formData,
                 {
                     headers: {

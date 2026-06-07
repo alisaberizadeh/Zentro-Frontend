@@ -13,7 +13,7 @@ function Messages() {
   const { data: conversations_list, isLoading: isLoadingconversations_list } = useQuery({
     queryKey: ['conversations_list'],
     queryFn: async () => {
-      const res = await axios.get(`http://127.0.0.1:8000/api/conversations`, {
+      const res = await axios.get(`https://api.zentroapp.ir/api/conversations`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }

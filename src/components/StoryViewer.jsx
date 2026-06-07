@@ -14,7 +14,7 @@ export default function StoryViewer({ story, onClose }) {
     const [open, setopen] = useState(false)
     const { mutate: viewStory } = useMutation({
         mutationFn: (id) =>
-            axios.post(`http://127.0.0.1:8000/api/stories/${id}/view`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/stories/${id}/view`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -34,7 +34,7 @@ export default function StoryViewer({ story, onClose }) {
         queryKey: ['viewers', story.stories[i].id],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/stories/${story.stories[i].id}/viewers`,
+                `https://api.zentroapp.ir/api/stories/${story.stories[i].id}/viewers`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

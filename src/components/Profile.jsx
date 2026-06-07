@@ -24,7 +24,7 @@ function Profile() {
     const { data: dadaStories, isLoading: isLoadingStories } = useQuery({
         queryKey: ['stories', user.id],
         queryFn: async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/api/stories/${user.id}`, {
+            const res = await axios.get(`https://api.zentroapp.ir/api/stories/${user.id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
@@ -38,7 +38,7 @@ function Profile() {
         queryKey: ['followers', user?.id],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/followers/${user.id}`,
+                `https://api.zentroapp.ir/api/followers/${user.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ function Profile() {
         queryKey: ['followings', user?.id],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/followings/${user.id}`,
+                `https://api.zentroapp.ir/api/followings/${user.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ function Profile() {
         queryKey: ['posts', user?.id],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/posts/user/${user.id}`,
+                `https://api.zentroapp.ir/api/posts/user/${user.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ function Profile() {
     })
     const { mutate: toggleFollowUser } = useMutation({
         mutationFn: (userId) =>
-            axios.post(`http://127.0.0.1:8000/api/follow/${userId}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/follow/${userId}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -131,7 +131,7 @@ function Profile() {
     }
     const { mutate: followerRemove } = useMutation({
         mutationFn: (id) =>
-            axios.post(`http://127.0.0.1:8000/api/follow/remove/${id}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/follow/remove/${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",

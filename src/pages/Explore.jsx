@@ -12,7 +12,7 @@ function Explore() {
   const { data: dataexplore, isLoading: isLoadingexplore } = useQuery({
     queryKey: ['explore', user?.id],
     queryFn: async () => {
-      const res = await axios.get(`http://127.0.0.1:8000/api/explore/`, {
+      const res = await axios.get(`https://api.zentroapp.ir/api/explore`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }

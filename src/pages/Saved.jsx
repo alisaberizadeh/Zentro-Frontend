@@ -13,7 +13,7 @@ function Saved() {
         queryKey: ['saved', user?.id],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/saves/`,
+                `https://api.zentroapp.ir/api/saves`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

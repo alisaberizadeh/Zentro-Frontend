@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthContext';
 import { FaExclamationCircle } from 'react-icons/fa';
 import { DevTool } from '@hookform/devtools';
+import avatar from "../assets/images/avatar.jpg"
 
 function Login() {
     const { register, control, handleSubmit, setError, watch, formState: { errors }, } = useForm();
@@ -21,7 +22,7 @@ function Login() {
     return (
         <div className='w-full h-screen flex items-center justify-center'>
             <div className='lg:w-4/12 w-10/12 bg-white rounded-ss-3xl rounded-ee-3xl p-10'>
-                <img loading='lazy'   src="src/assets/images/avatar.jpg" className='w-2/6 rounded-full m-auto' alt="" />
+                <img loading='lazy'   src={avatar} className='w-2/6 rounded-full m-auto' alt="" />
                 <h1 className='text-center text-xl font-medium mt-2 mb-4'>Log in to Your Account</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {errors?.root && <p className='text-sm ml-2 flex items-center text-red-500'> <FaExclamationCircle className='mr-2' />{errors?.root.message}</p>}

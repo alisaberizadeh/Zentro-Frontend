@@ -16,7 +16,7 @@ function Notifications() {
     queryKey: ['notifications'],
     queryFn: async () => {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/notifications/`,
+        `https://api.zentroapp.ir/api/notifications`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -32,7 +32,7 @@ function Notifications() {
 
   const { mutate: readNotifications } = useMutation({
     mutationFn: (id) =>
-      axios.post(`http://127.0.0.1:8000/api/notifications/read/`, {}, {
+      axios.post(`https://api.zentroapp.ir/api/notifications/read`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: "application/json",

@@ -20,7 +20,7 @@ function EditProfile() {
 
     const { mutate } = useMutation({
         mutationFn: (formData) =>
-            axios.post("http://127.0.0.1:8000/api/update/avatar", formData, {
+            axios.post("https://api.zentroapp.ir/api/update/avatar", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -47,7 +47,7 @@ function EditProfile() {
     });
     const { mutate:updateInfo } = useMutation({
         mutationFn: (formData) =>
-            axios.put("http://127.0.0.1:8000/api/update/info", formData, {
+            axios.put("https://api.zentroapp.ir/api/update/info", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

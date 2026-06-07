@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     queryKey: ["userShow", parsedUser?.id , token],
     queryFn: async () => {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/user/${parsedUser.id}`,
+        `https://api.zentroapp.ir/api/user/${parsedUser.id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   // Sign up
   const signUp = async (data) => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register", {
+      const response = await axios.post("https://api.zentroapp.ir/api/register", {
         username: data.username,
         email: data.email,
         password: data.password,
@@ -82,7 +82,7 @@ export const AuthProvider = ({ children }) => {
   // Sign in
   const signIn = async (data) => {
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login", {
+      const response = await axios.post("https://api.zentroapp.ir/api/login", {
         username: data.username,
         password: data.password,
       });
@@ -123,7 +123,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/logout",
+        "https://api.zentroapp.ir/api/logout",
         {},
         {
           headers: {

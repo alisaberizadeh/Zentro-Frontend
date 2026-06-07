@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom'
 import { FaExclamationCircle } from "react-icons/fa";
 import { AuthContext } from '../contexts/AuthContext';
+import avatar from "../assets/images/avatar.jpg"
 
 function Register() {
     const { register, control, handleSubmit, setError, watch, formState: { errors }, } = useForm();
@@ -15,7 +16,7 @@ function Register() {
     return (
         <div className='w-full h-screen flex items-center justify-center'>
             <div className='lg:w-4/12 w-10/12 bg-white rounded-ss-3xl rounded-ee-3xl p-10'>
-                <img loading='lazy'   src="src/assets/images/avatar.jpg" className='w-2/6 rounded-full m-auto' alt="" />
+                <img loading='lazy'   src={avatar} className='w-2/6 rounded-full m-auto' alt="" />
                 <h1 className='text-center text-xl font-medium mt-2 mb-4'>Create a Account</h1>
 
                 <form onSubmit={handleSubmit(onSubmit)}>

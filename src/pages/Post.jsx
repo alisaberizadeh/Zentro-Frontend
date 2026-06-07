@@ -21,7 +21,7 @@ function Post() {
         queryKey: ['post', id],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/posts/${id}`,
+                `https://api.zentroapp.ir/api/posts/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -39,7 +39,7 @@ function Post() {
         queryKey: ["userInfo", data?.data?.post?.user_id, token],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/user/${data?.data?.post?.user_id}`,
+                `https://api.zentroapp.ir/api/user/${data?.data?.post?.user_id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ function Post() {
     });
     const { mutate: sendComment } = useMutation({
         mutationFn: (formData) =>
-            axios.post(`http://127.0.0.1:8000/api/comments/${id}`, formData, {
+            axios.post(`https://api.zentroapp.ir/api/comments/${id}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -87,7 +87,7 @@ function Post() {
     }
     const { mutate: toggleLike } = useMutation({
         mutationFn: () =>
-            axios.post(`http://127.0.0.1:8000/api/posts/like/${id}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/posts/like/${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -117,7 +117,7 @@ function Post() {
     }
     const { mutate: toggleSave } = useMutation({
         mutationFn: () =>
-            axios.post(`http://127.0.0.1:8000/api/saves/post/${id}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/saves/post/${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -150,7 +150,7 @@ function Post() {
     }
     const { mutate: toggleFollow } = useMutation({
         mutationFn: () =>
-            axios.post(`http://127.0.0.1:8000/api/follow/${dataUser?.data.user.id}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/follow/${dataUser?.data.user.id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -186,7 +186,7 @@ function Post() {
     }
     const { mutate: toggleFollowUser } = useMutation({
         mutationFn: (userId) =>
-            axios.post(`http://127.0.0.1:8000/api/follow/${userId}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/follow/${userId}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",

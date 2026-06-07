@@ -26,7 +26,7 @@ function HomePost({ item }) {
 
     const { mutate: toggleLike } = useMutation({
         mutationFn: (id) =>
-            axios.post(`http://127.0.0.1:8000/api/posts/like/${id}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/posts/like/${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -60,7 +60,7 @@ function HomePost({ item }) {
 
     const { mutate: toggleSave } = useMutation({
         mutationFn: (id) =>
-            axios.post(`http://127.0.0.1:8000/api/saves/post/${id}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/saves/post/${id}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -97,7 +97,7 @@ function HomePost({ item }) {
 
     const { mutate: toggleFollowUser } = useMutation({
         mutationFn: (userId) =>
-            axios.post(`http://127.0.0.1:8000/api/follow/${userId}`, {}, {
+            axios.post(`https://api.zentroapp.ir/api/follow/${userId}`, {}, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",
@@ -137,7 +137,7 @@ function HomePost({ item }) {
 
     const { mutate: sendComment, isPending: isSendingComment } = useMutation({
         mutationFn: ({ postId, formData }) =>
-            axios.post(`http://127.0.0.1:8000/api/comments/${postId}`, formData, {
+            axios.post(`https://api.zentroapp.ir/api/comments/${postId}`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     Accept: "application/json",

@@ -14,7 +14,7 @@ function Search() {
         queryKey: ['search'],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/search/`,
+                `https://api.zentroapp.ir/api/search`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

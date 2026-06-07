@@ -22,7 +22,7 @@ function Conversation() {
   const { register: register_sendFile, handleSubmit: handleSubmit_sendFile, watch: watch_sendFile, reset: reset_sendFile, formState: { errors: errors_sendFile }, } = useForm();
   const { mutate: messagesSeen } = useMutation({
     mutationFn: () =>
-      axios.post(`http://127.0.0.1:8000/api/messages/${id}/seen`, {}, {
+      axios.post(`https://api.zentroapp.ir/api/messages/${id}/seen`, {}, {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: "application/json",
@@ -39,7 +39,7 @@ function Conversation() {
   const { data: conversation, isLoading: isLoadingconversation } = useQuery({
     queryKey: ['conversation', id],
     queryFn: async () => {
-      const res = await axios.get(`http://127.0.0.1:8000/api/conversations/show/${id}`, {
+      const res = await axios.get(`https://api.zentroapp.ir/api/conversations/show/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -51,7 +51,7 @@ function Conversation() {
   const { data: messages, isLoading: isLoadingmessages } = useQuery({
     queryKey: ['messages', id],
     queryFn: async () => {
-      const res = await axios.get(`http://127.0.0.1:8000/api/messages/${id}`, {
+      const res = await axios.get(`https://api.zentroapp.ir/api/messages/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -65,7 +65,7 @@ function Conversation() {
   const { mutate: sendMessage } = useMutation({
     mutationFn: (form) => {
       return axios.post(
-        "http://127.0.0.1:8000/api/messages/send",
+        "https://api.zentroapp.ir/api/messages/send",
         form,
         {
           headers: {
@@ -98,7 +98,7 @@ function Conversation() {
   const { mutate: sendFile } = useMutation({
     mutationFn: (formData) => {
       return axios.post(
-        "http://127.0.0.1:8000/api/messages/file",
+        "https://api.zentroapp.ir/api/messages/file",
         formData,
         {
           headers: {
@@ -141,8 +141,8 @@ function Conversation() {
       className='h-full m-auto bg-green-100 bg-repeat'
       style={{
         backgroundImage: `url(${chatBg})`,
-        backgroundSize: 'auto', // مطمئن شوید که سایز اصلی عکس حفظ می‌شود (تکرار شود)
-        backgroundRepeat: 'repeat' // تکرار در هر دو جهت
+        backgroundSize: 'auto',
+        backgroundRepeat: 'repeat' 
       }}
     >
 
@@ -255,10 +255,10 @@ function Conversation() {
               value.trim().length > 0 || "message cannot be empty"
           },
         })}
-          type="text" className={`w-[80%] h-full outline-none px-5`} placeholder='Write your message...' />
-        <button type='button' onClick={() => setOpen(true)} className='w-[10%] cursor-pointer hover:bg-green-200 transition-all
-         duration-300 text-green-600 text-3xl h-full flex items-center justify-center bg-green-100'><BiLink /></button>
-        <button className='w-[10%] cursor-pointer hover:bg-green-700 text-white text-2xl h-full flex items-center justify-center bg-green-600'><BiSend /></button>
+          type="text" className={`lg:w-[80%] w-[70%] h-full lg:text-base text-sm outline-none px-5`} placeholder='Write your message...' />
+        <button type='button' onClick={() => setOpen(true)} className='lg:w-[10%] w-[15%] cursor-pointer hover:bg-green-200 transition-all
+         duration-300 text-green-600  lg:text-3xl text-xl   h-full flex items-center justify-center bg-green-100'><BiLink /></button>
+        <button className='lg:w-[10%] w-[15%] cursor-pointer hover:bg-green-700 text-white lg:text-2xl text-xl  h-full flex items-center justify-center bg-green-600'><BiSend /></button>
       </form>
 
 

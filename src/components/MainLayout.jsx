@@ -12,6 +12,8 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { PiUsersDuotone } from 'react-icons/pi';
 import { LuSend } from 'react-icons/lu';
+import logo from '/src/assets/images/logo2.png';
+
 function MainLayout() {
     const { user, logout, token } = useContext(AuthContext)
     const handleLogout = () => {
@@ -35,7 +37,7 @@ function MainLayout() {
         queryKey: ['notificationsCount'],
         queryFn: async () => {
             const res = await axios.get(
-                `http://127.0.0.1:8000/api/notifications/unread_count/`,
+                `https://api.zentroapp.ir/api/notifications/unread_count`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -52,7 +54,7 @@ function MainLayout() {
     const { data: conversations_list, isLoading: isLoadingconversations_list } = useQuery({
         queryKey: ['conversations_list'],
         queryFn: async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/api/conversations`, {
+            const res = await axios.get(`https://api.zentroapp.ir/api/conversations`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
@@ -69,19 +71,19 @@ function MainLayout() {
             <div className="w-full grid grid-cols-8 h-screen lg:py-5 gap-5">
 
                 <div className='w-full h-[9%] bg-green-600 z-40 fixed bottom-0 left-0 flex items-center justify-around border-t border-t-gray-200 lg:hidden'>
-                    <Link to="/" className='text-2xl text-white'><FiHome className='mr-4' /></Link>
-                    <Link to="/notifications" className='text-2xl text-white'><AiOutlineHeart className='mr-4' /></Link>
-                    <Link to="/explore" className='text-2xl text-white'><MdOutlineExplore className='mr-4' /></Link>
-                    <Link to="/search" className='text-2xl text-white'><BiSearch className='mr-4' /></Link>
-                    <Link to="/conversation" className='text-2xl text-white'><LuSend className='mr-4' /></Link>
+                    <Link to="/" className='text-2xl text-white'><FiHome/></Link>
+                    <Link to="/notifications" className='text-2xl text-white'><AiOutlineHeart/></Link>
+                    <Link to="/explore" className='text-2xl text-white'><MdOutlineExplore/></Link>
+                    <Link to="/search" className='text-2xl text-white'><BiSearch/></Link>
+                    <Link to="/conversation" className='text-2xl text-white'><LuSend/></Link>
                     <Link to="/profile" className='text-2xl text-white'><img loading='lazy' src={import.meta.env.VITE_AVATAR_IMAGE_BASE_URL + user?.profile_photo} alt={user?.username}
-                        className='w-8 h-8  object-cover rounded-full mr-4' /></Link>
+                        className='w-8 h-8  object-cover rounded-full' /></Link>
 
                 </div>
 
                 <div className="lg:col-span-2 hidden lg:block bg-white h-full rounded-2xl overflow-hidden">
 
-                    <img loading='lazy' src="/src/assets/images/logo2.png" alt="" />
+                    <img loading='lazy' src={logo} alt="" />
                     <div className='p-5'>
                         <Link to="/profile" className='rounded-xl h-16 px-5 text-xl flex items-center font-medium text-gray-800 hover:bg-green-50 hover:text-green-700 duration-300 transition-allx'>
                             <img loading='lazy' src={import.meta.env.VITE_AVATAR_IMAGE_BASE_URL + user?.profile_photo} alt={user?.username} className='w-10 h-10  object-cover rounded-full mr-4' />{user?.name}
